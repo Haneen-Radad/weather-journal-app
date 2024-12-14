@@ -1,0 +1,174 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(to bottom, #a8d8ea, #f8f9fa);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* App Container */
+#app {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Animation */
+#app::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+    animation: shine 6s infinite linear;
+    z-index: 0;
+}
+
+/* Headline */
+.headline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0078d7;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Form Elements */
+.holder {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    z-index: 1;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+}
+
+input,
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8em;
+    border: 2px solid #d3e8f4;
+    border-radius: 8px;
+    background: #f0f9ff;
+    font-size: 1rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0078d7;
+    box-shadow: 0 0 10px rgba(0, 120, 215, 0.4);
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Button */
+button {
+    padding: 0.8em 2em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: #005fa3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background: #003e6d;
+    transform: scale(0.95);
+}
+
+/* Entries Section */
+.entry {
+    background: #e3f2fd;
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0078d7;
+}
+
+/* Entry Details */
+#entryHolder {
+    display: grid;
+    gap: 0.5em;
+}
+
+#entryHolder div {
+    font-size: 1.2rem;
+    background: #ffffff;
+    padding: 1.3em 3em;
+    width: 10em;
+    border-radius: 8px;
+    border: 1px solid #d3e8f4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes */
+@keyframes shine {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #app {
+        padding: 1.5em;
+    }
+
+    .headline {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+    }
+}
